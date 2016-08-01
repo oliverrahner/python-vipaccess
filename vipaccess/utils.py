@@ -270,7 +270,7 @@ def check_token(token_id, secret):
 def main():
     request = generate_request()
 
-    response = get_provisioning_response(request)
+    response = get_provisioning_response(request.encode('utf-8'))
 
     otp_token = get_token_from_response(response.content)
 
